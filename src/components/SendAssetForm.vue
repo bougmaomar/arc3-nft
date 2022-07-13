@@ -22,11 +22,10 @@
 <script>
 /* eslint-disable */
 import asa from "../asa.js";
-import axios from "axios";
-
-// uncomment these lines once you've copied the checkpoint files over
+// i got a problem in algob saying Error ABLDR401: Cannot read properties of undefined (reading 'split') thats why i didnt use them
 // import fungibleConfig from "../artifacts/0-deploy-tokens.js.cp.yaml"; //fungible token
 // import nftConfig from "../artifacts/2-deploy-nft.js.cp.yaml"; //nft
+import axios from "axios";
 
 export default {
     props: {
@@ -72,9 +71,12 @@ export default {
             }
         },
         async setNFTData() {
-            // this function should update nfts in data() so that your nfts can be displayed in your dapp.
-
-            // write your code here
+            this.acsTxId =  "";
+            this.amount_acs = 1;
+            this.explorerURL = "";
+            this.nfts = [];
+            this.fungibleTokenId = "";
+            this.creator = process.env.VUE_APP_CREATOR_ADDR;
         },
     },
     async mounted() {
